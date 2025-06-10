@@ -1,0 +1,41 @@
+nav{
+    margin-top: 1rem;
+    width: 20%;
+    font-size: 80%;
+    border: 1px solid #9b9696;
+    ul{
+        list-style: none;
+        li{
+            border-bottom: 1px solid #9b9696;
+            padding: 10px;
+            transition: ease 0.3s;
+            &:hover{
+                background-color: #f0f0f0;
+                cursor: pointer;
+            }
+
+            @media screen and (max-width: 1101px) {
+                padding: 5px;
+                font-size: 70%;
+            }
+
+            @media screen and (max-width: 800px) {
+                padding: 3px;
+                font-size: 60%;   
+            }
+
+            @media screen and (max-width: 642px) {
+                padding: 2px;
+                font-size: 50%;
+                
+            }
+
+            @media screen and (max-width: 500px) {
+                padding: 1px;
+                font-size: 40%;
+                
+            }
+
+        }
+    }
+}

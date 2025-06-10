@@ -1,0 +1,27 @@
+header {
+  border-bottom: 1px solid #9b9696;
+  padding: 10px;
+
+  nav {
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+
+      li{
+
+
+        a{
+            color: green;
+            font-size: 24px;
+        }
+      }
+
+    }
+
+  }
+
+
+}
