@@ -1,1 +1,20 @@
-<p>table works!</p>
+<table id="users">
+  <tr>
+    <th>Full Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Company</th>
+    <th>Posts</th>
+  </tr>
+
+  @for (user of usersData; track user.id) {
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.company.name }}</td>
+      <td><button>Posts</button></td>
+    </tr>
+  }
+
+</table>
