@@ -1,0 +1,22 @@
+
+<div class="centered-container">
+<app-header></app-header>
+<div class="table-scroll-wrapper">
+<table id="posts">
+  <tr>
+    <th>Username</th>
+    <th>Body</th>
+    <th>Detail</th>
+  </tr>
+
+  @for (post of posts; track post.id) {
+    <tr>
+      <td>{{post.username}}</td>
+      <td>{{post.body}}</td>
+      <td><button class="button-1">Details</button></td>
+    </tr>
+  }
+
+</table>
+</div>
+</div>

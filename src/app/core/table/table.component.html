@@ -1,3 +1,5 @@
+<div class="centered-container">
+<app-header></app-header>
 <table id="users">
   <tr>
     <th>Full Name</th>
@@ -13,8 +15,9 @@
       <td>{{ user.phone }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.company.name }}</td>
-      <td><button>Posts</button></td>
+      <td><button class="button-1" (click)="goToUserPosts(user.id)">Posts</button></td>
     </tr>
   }
 
 </table>
+</div>

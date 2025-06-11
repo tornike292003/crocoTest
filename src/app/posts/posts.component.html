@@ -1,0 +1,12 @@
+<div class="centered-container">
+  <app-header></app-header>
+  <div class="card-container">
+    @for (post of posts; track post.id) {
+    <div class="card">
+        <span><strong>Title:</strong>{{post.title}}</span>
+        <span><strong>Body:</strong>{{post.body}}</span>
+    </div>
+    }
+
+  </div>
+</div>
