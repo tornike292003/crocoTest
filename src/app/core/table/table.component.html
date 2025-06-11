@@ -1,5 +1,9 @@
 <div class="centered-container">
 <app-header></app-header>
+<div class="search-container">
+  <input type="text" [formControl]="searchUser" placeholder="Search User">
+</div>
+  
 <table id="users">
   <tr>
     <th>Full Name</th>
@@ -9,7 +13,7 @@
     <th>Posts</th>
   </tr>
 
-  @for (user of usersData; track user.id) {
+  @for (user of filteredData; track user.id) {
     <tr>
       <td>{{ user.name }}</td>
       <td>{{ user.phone }}</td>
