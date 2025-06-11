@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { MasterService } from '../master.service';
 import { CommonModule } from '@angular/common';
 import { Todo } from '../todo.model';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,15 +11,22 @@ import { Todo } from '../todo.model';
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit, OnDestroy{
 
   todo: Todo[] = [];
   masterService = inject(MasterService);
+  private destroy$ = new Subject<void>();
+
 
   ngOnInit(){
-    return this.masterService.getTodo().subscribe((data) => {
+    return this.masterService.getTodo().pipe(takeUntil(this.destroy$)).subscribe((data) => {
       this.todo = data;
     })
+  }
+
+  ngOnDestroy(){
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 }

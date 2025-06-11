@@ -19,10 +19,9 @@ body {
 
 .centered-container {
   margin: 0 auto;
-  height: 100vh;
   width: 50%;
+  height: 100vh;
   max-width: 1024px;
-  overflow-y: hidden;
   background-color: white;
   padding: 10px;
   filter: drop-shadow(10px 10px 20px black);
@@ -104,3 +103,4 @@ body {
     
 }
 }
+
