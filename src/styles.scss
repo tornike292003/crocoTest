@@ -59,12 +59,39 @@ body {
     background-color: darkgreen;
   }
 
+  @media screen and (max-width: 1500px) {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  @media screen and (max-width: 777px) {
+    width: 100%;
+    font-size: 0.6rem;
+    padding: 5px;
+    
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    font-size: 0.5rem;
+    padding: 5px;
+    
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    font-size: 0.5rem;
+    padding: 5px;
+    
+  }
+
+
   @media screen and (max-width: 480px) {
     width: 100%;
     font-size: 0.4rem;
     padding: 5px;
 
-    
   }
 
 }

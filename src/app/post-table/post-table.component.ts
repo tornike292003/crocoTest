@@ -11,11 +11,22 @@ import { MasterService } from '../master.service';
 export class PostTableComponent {
   posts: any[] = [];
   masterService = inject(MasterService);
+  selectedPost: any = null;
+
 
   ngOnInit(){
     this.masterService.getPosts().subscribe((data) => {
       this.posts = data;
     })
+  }
+
+  openModal(post:any):void{
+    this.selectedPost = post;
+  }
+
+
+  closeModal():void{
+    this.selectedPost = null;
   }
 
 }
