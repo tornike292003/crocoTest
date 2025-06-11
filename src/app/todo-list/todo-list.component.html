@@ -1,1 +1,11 @@
-<p>todo-list works!</p>
+<div class="centered-container">
+  <app-header></app-header>
+  <div class="card-container">
+    @for (item of todo; track item.id) {
+    <div class="card" [ngClass]="{'completed': item.completed}">
+        <span><strong>Title:</strong>{{item.title}}</span>
+    </div>
+    }
+
+  </div>
+</div>

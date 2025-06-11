@@ -30,4 +30,8 @@ export class MasterService {
   getPostById(id:number):Observable<any[]>{
     return this.http.get<any[]>(`${this.baseUrl}posts?userId=${id}`);
   }
+
+  getTodo():Observable<any[]>{
+    return this.http.get<any[]>(this.baseUrl + 'todos');
+  }
 }
