@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../core/header/header.component";
 import { MasterService } from '../master.service';
 import { ActivatedRoute } from '@angular/router';
+import { Posts } from '../posts.model';
 
 @Component({
   selector: 'app-posts',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostsComponent {
   id!:number;
-  posts: any[] = [];
+  posts: Posts[] = [];
   masterService = inject(MasterService);
   route = inject(ActivatedRoute)
 

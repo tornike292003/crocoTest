@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, map, Observable } from 'rxjs';
+import { Users } from './users.model';
+import { Posts } from './posts.model';
+import { Todo } from './todo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +14,14 @@ export class MasterService {
 
   constructor(private http:HttpClient) { }
 
-  getUsers():Observable<any[]>{
-    return this.http.get<any[]>(this.baseUrl + 'users');
+  getUsers():Observable<Users[]>{
+    return this.http.get<Users[]>(this.baseUrl + 'users');
   }
 
   getPosts():Observable<any[]>{
     return forkJoin({
-      posts: this.http.get<any[]>(this.baseUrl + 'posts'),
-      users: this.http.get<any[]>(this.baseUrl + 'users')
+      posts: this.http.get<Posts[]>(this.baseUrl + 'posts'),
+      users: this.http.get<Users[]>(this.baseUrl + 'users')
     }).pipe(
       map(({posts, users}) => posts.map(post => ({
         ...post,
@@ -27,11 +30,11 @@ export class MasterService {
     );
   }
 
-  getPostById(id:number):Observable<any[]>{
-    return this.http.get<any[]>(`${this.baseUrl}posts?userId=${id}`);
+  getPostById(id:number):Observable<Posts[]>{
+    return this.http.get<Posts[]>(`${this.baseUrl}posts?userId=${id}`);
   }
 
-  getTodo():Observable<any[]>{
-    return this.http.get<any[]>(this.baseUrl + 'todos');
+  getTodo():Observable<Todo[]>{
+    return this.http.get<Todo[]>(this.baseUrl + 'todos');
   }
 }

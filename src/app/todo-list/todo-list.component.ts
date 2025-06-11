@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { MasterService } from '../master.service';
 import { CommonModule } from '@angular/common';
+import { Todo } from '../todo.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TodoListComponent {
 
-  todo: any[] = [];
+  todo: Todo[] = [];
   masterService = inject(MasterService);
 
   ngOnInit(){

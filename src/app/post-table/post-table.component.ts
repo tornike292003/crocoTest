@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { MasterService } from '../master.service';
+import { Posts } from '../posts.model';
 
 @Component({
   selector: 'app-post-table',
@@ -9,7 +10,7 @@ import { MasterService } from '../master.service';
   styleUrl: './post-table.component.scss'
 })
 export class PostTableComponent {
-  posts: any[] = [];
+  posts: Posts[] = [];
   masterService = inject(MasterService);
   selectedPost: any = null;
 

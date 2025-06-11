@@ -3,6 +3,7 @@ import { MasterService } from '../../master.service';
 import { HeaderComponent } from "../header/header.component";
 import { Router } from '@angular/router';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { Users } from '../../users.model';
 
 @Component({
   selector: 'app-table',
@@ -12,10 +13,10 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms'
 })
 export class TableComponent {
 
-  usersData: any[] = [];
+  usersData: Users[] = [];
   masterService = inject(MasterService);
   router = inject(Router)
-  filteredData: any[] = [];
+  filteredData: Users[] = [];
   searchUser = new FormControl('')
 
   ngOnInit(){
