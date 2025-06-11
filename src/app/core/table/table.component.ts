@@ -38,6 +38,10 @@ export class TableComponent {
   }
 
 
+   goToUserToDo(id:number){
+    this.router.navigate(['/todo', id])
+  }
+
 
 
 

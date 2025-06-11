@@ -11,6 +11,7 @@
     <th>Email</th>
     <th>Company</th>
     <th>Posts</th>
+    <th>ToDo</th>
   </tr>
 
   @for (user of filteredData; track user.id) {
@@ -20,6 +21,7 @@
       <td>{{ user.email }}</td>
       <td>{{ user.company.name }}</td>
       <td><button class="button-1" (click)="goToUserPosts(user.id)">Posts</button></td>
+      <td><button class="button-1" (click)="goToUserToDo(user.id)">ToDo</button></td>
     </tr>
   }
 
